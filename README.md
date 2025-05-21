@@ -7,7 +7,7 @@ The environment requirements are in the file `environment.yml`.
 # Download SEDD-medium checkpoint
 `python load_model.py`
 
-# Train the diffusion langauge model
+# Train the Diffusion Language Model
 `python train.py`
 
 To customize training configurations or datasets, edit the settings in `configs/config.yaml`.
