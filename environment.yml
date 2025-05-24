@@ -1,4 +1,4 @@
-name: dot
+name: diffusion
 channels:
   - nvidia
   - nvidia/label/cuda-11.7.0
