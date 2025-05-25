@@ -78,7 +78,7 @@ for dialogue_id in list(original_content_dict.keys()):
     while not done:
         num_turns += 1
         if num_turns>10: break
-        messages = [{"role":"user", "content":"You are an intelligent chatbot with expertise in dialogue planning. Your task is to ensure that the conversation naturally incorporate a given list of keywords in the specified order. These keywords can be mentioned by either the user or the system, and should be seamlessly integrated into the dialogue flow. The keyword list is :{{{}}}. Your conversation must strictly follow this conversation plan:{{{}}}.\nHere is the conversation history: {{{}}}. If the dialogue history is empty, please generate a response to start the conversation. Now generate a succinct response (no longer than 30 words) for the next turn:".format(", ".join(key_word_list), hyps_best, "\n".join(conv_history))}]
+        messages = [{"role":"user", "content":"You are an intelligent chatbot with expertise in dialogue planning. Your task is to ensure that the conversation naturally incorporates a given list of keywords in the specified order. These keywords can be mentioned by either the user or the system, and should be seamlessly integrated into the dialogue flow. The keyword list is :{{{}}}. Your conversation must strictly follow this conversation plan:{{{}}}.\nHere is the conversation history: {{{}}}. If the dialogue history is empty, please generate a response to start the conversation. Now generate a succinct response (no longer than 30 words) for the next turn:".format(", ".join(key_word_list), hyps_best, "\n".join(conv_history))}]
         response = messagefunction(messages).strip()
         if "system" not in response.lower():
             conv_history.append("system: "+response)
